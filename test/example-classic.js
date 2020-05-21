@@ -59,6 +59,9 @@ describe('wdio5', function () {
         await eyes.open(browser, 'Demo App', 'Smoke Test', new RectangleSize(800, 600));
 
         // Navigate the browser to the "ACME" demo app.
+        // ⭐️ Note to see visual bugs, run the test using the above URL for the 1st run.
+        // but then change the above URL to https://demo.applitools.com/index_v2.html
+        // (for the 2nd run)
         await browser.url('https://demo.applitools.com');
 
         // To see visual bugs after the first run, use the commented line below instead.
