@@ -37,9 +37,6 @@ describe('wdio5', function () {
         // Initialize the eyes configuration
         const configuration = new Configuration();
 
-        // You can get your api key from the Applitools dashboard
-        configuration.setApiKey('APPLITOOLS_API_KEY')
-
         // Set new batch
         configuration.setBatch(new BatchInfo('Demo batch'))
 
