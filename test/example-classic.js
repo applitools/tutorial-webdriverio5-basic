@@ -39,7 +39,7 @@ describe('wdio5', function () {
         const configuration = new Configuration();
 
         // Set new batch
-        configuration.setBatch(new BatchInfo('Demo batch'))
+        configuration.setBatch(new BatchInfo('Demo Batch - WDIO 5 - Classic'))
 
         // Set the configuration to eyes
         eyes.setConfiguration(configuration);
@@ -49,7 +49,7 @@ describe('wdio5', function () {
     it('Classic Runner Test', async () => {
 
         // Start the test by setting AUT's name, test name and viewport size (width X height)
-        await eyes.open(browser, 'Demo App - Wdio 5', 'Smoke Test', new RectangleSize(800, 600));
+        await eyes.open(browser, 'Demo App - WDIO 5 - Classic', 'Smoke Test - WDIO 5 - Classic', new RectangleSize(800, 600));
 
         // Navigate the browser to the "ACME" demo app.
         await browser.url('https://demo.applitools.com');
