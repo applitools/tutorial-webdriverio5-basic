@@ -24,6 +24,7 @@ describe('wdio5', function () {
                 browserName: 'chrome'
             },
             logLevel: 'silent',
+            hostname: (process.env.CI === 'true') ? 'selenium' : '127.0.0.1'
         };
         // Use Chrome browser
         browser = await remote(chrome);
@@ -48,7 +49,7 @@ describe('wdio5', function () {
     it('Classic Runner Test', async () => {
 
         // Start the test by setting AUT's name, test name and viewport size (width X height)
-        await eyes.open(browser, 'Demo App', 'Smoke Test', new RectangleSize(800, 600));
+        await eyes.open(browser, 'Demo App - Wdio 5', 'Smoke Test', new RectangleSize(800, 600));
 
         // Navigate the browser to the "ACME" demo app.
         await browser.url('https://demo.applitools.com');
@@ -67,7 +68,7 @@ describe('wdio5', function () {
         await eyes.check('App Window', Target.window().fully());
 
         // End the test
-        await eyes.closeAsync();
+        await eyes.close(false);
     });
 
     afterEach(async () => {
@@ -75,10 +76,10 @@ describe('wdio5', function () {
         await browser.deleteSession();
 
         // If the test was aborted before eyes.close was called, ends the test as aborted.
-        await eyes.abortIfNotClosed();
+        await eyes.abort();
 
         // Wait and collect all test results
-        const results = await eyes.getRunner().getAllTestResults(false);
+        const results = await eyes.getRunner().getAllTestResults();
         console.log(results);
         console.log(results.getAllResults());
     });
