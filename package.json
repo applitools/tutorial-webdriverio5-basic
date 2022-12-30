@@ -19,7 +19,7 @@
   "devDependencies": {
     "webdriverio": "^5.23.0",
     "@applitools/eyes-webdriverio": "5.34.2",
-    "mocha": "^6.2.3"
+    "mocha": "^10.2.0"
   },
   "engines": {
     "node": ">=12.13.0"
